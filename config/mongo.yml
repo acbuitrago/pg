@@ -9,7 +9,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: pg_app_development
+  database: pg
 
 test:
   <<: *defaults
@@ -19,6 +19,6 @@ test:
 # set these environment variables on your prod server
 production:
   <<: *defaults
-  database: pg_app
+  database: pg
   username: <%= ENV['MONGO_USERNAME'] %>
   password: <%= ENV['MONGO_PASSWORD'] %>
