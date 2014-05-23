@@ -1,5 +1,6 @@
 class User
   include MongoMapper::Document
+  key :idN, String
   key :lugaresVisitados, Array
   key :trayectorias, Array
   key :arcos, Array
