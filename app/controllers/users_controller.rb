@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 		 marker.lng lugar.loc["lon"]
 		 marker.infowindow "Lugar visitado en #{lugar.diaSemana} <br /> #{lugar.avgHoraEntrada.strftime("%H:%M")} - #{lugar.avgHoraSalida.strftime("%H:%M")} <br /> #{lugar.avgHoraEntrada.strftime("%Y-%m-%d")}"
 	end
+	@polylines=[]
 	@trayectorias.each do |tray|
                 t=[]
                 muestras=tray.muestras
