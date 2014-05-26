@@ -2,7 +2,7 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 <% provide(:title, 'Usuario')%>
 <script type="text/javascript">
-function initialize(){
+
 var mapStyle = [
     {
         "featureType": "water",
@@ -167,6 +167,7 @@ var mapStyle = [
         ]
     }
 ];
+function initialize(){
 var handler = Gmaps.build('Google');
 handler.buildMap({ 	
     provider: {
@@ -178,14 +179,45 @@ handler.buildMap({
 	}, 
   function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  var polylines = handler.addPolylines( <%=raw @polylines.to_json %>
+ <% j=0%>
+ <%@trayectorias.each do |tray|%>
+  var polylines = handler.addPolylines( [
+	[
+	<%n=tray.muestras.length%>
+	<%i=0%>
+	<% tray.muestras.each do |m| %>
+		{lat:<%=m["lat"]%>, lng:<%=m["lon"]%>}
+		<% if (i<n-1) %>,<%end %>
+                <%i=i+1%>
+		
+	<%end%>
+	]
+	],
+	{ strokeColor:  RainBowColor(<%=j%>, <%=n%>)}
   );
+ 	<%j=j+1%>
+ <% end %>
 
   handler.bounds.extendWith(markers);
   handler.bounds.extendWith(polylines);
   handler.fitMapToBounds();
 
 });
+}
+function RainBowColor(length, maxLength)
+{
+    var i = (length * 255 / maxLength);
+    var r = Math.round(Math.sin(0.024 * i + 0) * 127 + 128);
+    var g = Math.round(Math.sin(0.024 * i + 2) * 127 + 128);
+    var b = Math.round(Math.sin(0.024 * i + 4) * 127 + 128);
+    return rgbToHex(r, g , b) ;
+}
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
