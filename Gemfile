@@ -5,6 +5,9 @@ ruby '2.0.0'
 gem 'rails', '4.0.5'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
+gem 'gmaps4rails'
+gem 'geocoder'
+
 
 # Use sqlite3 as the database for Active Record
 group :development do
@@ -28,6 +31,7 @@ gem 'jquery-rails', '3.0.4'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '1.1.1'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '1.0.2'
