@@ -6,166 +6,76 @@
 var mapStyle = [
     {
         "featureType": "water",
-        "elementType": "all",
         "stylers": [
             {
-                "hue": "#e9ebed"
+                "color": "#46bcec"
             },
             {
-                "saturation": -78
-            },
-            {
-                "lightness": 67
-            },
-            {
-                "visibility": "simplified"
+                "visibility": "on"
             }
         ]
     },
     {
         "featureType": "landscape",
-        "elementType": "all",
         "stylers": [
             {
-                "hue": "#ffffff"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 100
-            },
-            {
-                "visibility": "simplified"
+                "color": "#f2f2f2"
             }
         ]
     },
     {
         "featureType": "road",
-        "elementType": "geometry",
         "stylers": [
             {
-                "hue": "#bbc0c4"
+                "saturation": -100
             },
             {
-                "saturation": -93
-            },
-            {
-                "lightness": 31
-            },
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "stylers": [
             {
                 "visibility": "simplified"
             }
         ]
     },
     {
-        "featureType": "poi",
-        "elementType": "all",
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
         "stylers": [
-            {
-                "hue": "#ffffff"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 100
-            },
             {
                 "visibility": "off"
             }
         ]
     },
     {
-        "featureType": "road.local",
-        "elementType": "geometry",
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
         "stylers": [
             {
-                "hue": "#e9ebed"
-            },
-            {
-                "saturation": -90
-            },
-            {
-                "lightness": -8
-            },
-            {
-                "visibility": "simplified"
+                "color": "#444444"
             }
         ]
     },
     {
         "featureType": "transit",
-        "elementType": "all",
         "stylers": [
             {
-                "hue": "#e9ebed"
-            },
-            {
-                "saturation": 10
-            },
-            {
-                "lightness": 69
-            },
-            {
-                "visibility": "on"
+                "visibility": "off"
             }
         ]
     },
     {
-        "featureType": "administrative.locality",
-        "elementType": "all",
+        "featureType": "poi",
         "stylers": [
             {
-                "hue": "#2c2e33"
-            },
-            {
-                "saturation": 7
-            },
-            {
-                "lightness": 19
-            },
-            {
-                "visibility": "on"
+                "visibility": "off"
             }
         ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "hue": "#bbc0c4"
-            },
-            {
-                "saturation": -93
-            },
-            {
-                "lightness": 31
-            },
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "hue": "#bbc0c4"
-            },
-            {
-                "saturation": -93
-            },
-            {
-                "lightness": -2
-            },
-            {
-                "visibility": "simplified"
-            }
-        ]
-    }
+    }           
 ];
 function initialize(){
 var handler = Gmaps.build('Google');
