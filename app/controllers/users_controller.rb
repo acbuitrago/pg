@@ -16,4 +16,7 @@ class UsersController < ApplicationController
 		 marker.infowindow "Lugar visitado en #{lugar.diaSemana} <br /> #{lugar.avgHoraEntrada.strftime("%H:%M")} - #{lugar.avgHoraSalida.strftime("%H:%M")} <br /> #{lugar.avgHoraEntrada.strftime("%Y-%m-%d")}"
 	end
   end
+  def results
+    
+  end
 end

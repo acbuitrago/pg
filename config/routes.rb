@@ -2,6 +2,7 @@ PgApp::Application.routes.draw do
   #get '/users/show'
   match '/users/:id', to:'users#show', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
+  post "users/results"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

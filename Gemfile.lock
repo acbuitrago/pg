@@ -40,7 +40,7 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     erubis (2.7.0)
-    execjs (2.0.2)
+    execjs (2.1.0)
     geocoder (1.2.1)
     gmaps4rails (2.1.2)
     hike (1.2.3)
@@ -96,6 +96,8 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    simple_calendar (1.1.3)
+      rails (>= 3.0)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -110,7 +112,7 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
-    thread_safe (0.3.3)
+    thread_safe (0.3.4)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
@@ -138,6 +140,7 @@ DEPENDENCIES
   rails (= 4.0.5)
   sass-rails (= 4.0.1)
   sdoc (= 0.3.20)
+  simple_calendar (~> 1.1.0)
   sprockets (= 2.11.0)
   sqlite3 (= 1.3.8)
   therubyracer
