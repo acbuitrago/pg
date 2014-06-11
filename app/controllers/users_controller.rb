@@ -17,6 +17,10 @@ class UsersController < ApplicationController
 	end
   end
   def results
-    
+	str=params[:id]
+	@user=User.find_by_idN(str)
+	@lugares= @user.places
+	@trayectorias= @user.trajectories
+
   end
 end

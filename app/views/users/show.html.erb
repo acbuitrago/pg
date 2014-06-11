@@ -221,14 +221,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <h4>¿Qué se sabe del usuario?</h4>
 <%@lugares=@lugares.sort_by{|f|[f.diaSemana, f.avgHoraEntrada.hour, f.avgHoraEntrada.min]}%>
+<%n=0%>
   <% @lugares.each do |lugar| %>
     <div>
 	<%if(lugar.frecuencia>1)%>
+	      <%n=1%>
 	      <%= lugar.diaSemana %>-<%= lugar.avgHoraEntrada.strftime("%H:%M")%>
 	<%end%>
     </div>
   <% end %>
-
+  <%if (n==0)%>
+	<p>No se puede inferir algo del usuario. ):</p>
+  <%end%>
  <div class="container">
 </div>
 <div class="panel panel-default">
@@ -245,6 +249,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <br>
 <label>Seleccione el lugar:</label>
 <input id="latlng" name="latlng" type="hidden" value="" />
+<input id="id" name="id" type="hidden" value="<%=@user.idN%>" />
 <div id="map-canvas" style='width: 400px; height: 400px'></div>
 <br>
 <%= submit_tag("Dar siguiente lugar") %>
